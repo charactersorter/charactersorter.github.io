@@ -113,34 +113,42 @@ function func_maleCheck()
 	}
 }
 
-function chgAll() {
+function chgAll() 
+{
     for (i=0; i<ary_TitleData.length; i++) {
         gID('optSelect' + i).checked = gID('optSelect_all').checked;
     }
 }
 
-function chgFlag(int_id) {
+function chgFlag(int_id) 
+{
     var obj_Check = gID('optSelect' + int_id);
     if (!obj_Check.disabled) {
         obj_Check.checked = (obj_Check.checked) ? false :true;
     }
 }
 
-function init(){
+function init()
+{
     int_Total = 0;
     int_RecordID = 0;
 
-    for (i=0; i<ary_CharacterData.length; i++) {
+    for (i=0; i<ary_CharacterData.length; i++) 
+    {
         if ((gID('optFemale').checked == false && gID('optMale').checked == false) ||
             (gID('optFemale').checked == true && ary_CharacterData[i][4] == 1) || 
-            (gID('optMale').checked == true && ary_CharacterData[i][4] == 0) )
+            (gID('optMale').checked == true && ary_CharacterData[i][4] == 0))
         {
-            for (j=0; j<ary_TitleData.length; j++) 
+            if ((gID('optMajor').checked == true && ary_CharacterData[i][5] == 1))
             {
-                if (gID('optSelect' + j).checked && (ary_CharacterData[i][2][j] == 1)) {
-                    ary_TempData[int_Total] = ary_CharacterData[i];
-                    int_Total++;
-                    break;
+                for (j = 0; j < ary_TitleData.length; j++) 
+                {
+                    if (gID('optSelect' + j).checked && (ary_CharacterData[i][2][j] == 1)) 
+                    {
+                        ary_TempData[int_Total] = ary_CharacterData[i];
+                        int_Total++;
+                        break;
+                    }
                 }
             }
         }
@@ -153,12 +161,14 @@ function init(){
     } 
     else 
     {
-        for (i=0; i<ary_TitleData.length; i++) {
+        for (i = 0; i < ary_TitleData.length; i++) 
+        {
             gID('optSelect' + i).disabled = true;
             gID('optSelect' + i).style.dsiplay = 'none';
         }
         gID('optSelect_all').disabled = true;
         gID('optImage').disabled = true;
+        gID('optMajor').disabled = true;
         gID('optFemale').disabled = true;
         gID('optMale').disabled = true;
     }
