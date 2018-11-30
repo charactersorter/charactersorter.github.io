@@ -14,7 +14,7 @@ var bln_ResultStyle = 0;
 
 var bln_ProgessBar = 1;
 
-var maxRows = 35;
+var maxRows = 25;
 
 var int_Colspan = 3;
 var ary_TitleData = [
