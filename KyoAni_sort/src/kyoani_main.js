@@ -139,7 +139,7 @@ function init()
             (gID('optFemale').checked == true && ary_CharacterData[i][4] == 1) || 
             (gID('optMale').checked == true && ary_CharacterData[i][4] == 0))
         {
-            if ((gID('optMajor').checked == true && ary_CharacterData[i][5] == 1))
+            if (gID('optMajor').checked == false || (gID('optMajor').checked == true && ary_CharacterData[i][5] == 1))
             {
                 for (j = 0; j < ary_TitleData.length; j++) 
                 {
