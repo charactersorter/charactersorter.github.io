@@ -453,10 +453,10 @@ function fnc_ShowData()
         obj_SelectItem.appendChild(tbl_Result);
 	  
         var int_numberImageResult = 5;
-        if (ary_TempData.length <= 11)
-        {
-            int_numberImageResult = 11;
-        }
+        //if (ary_TempData.length <= 11)
+        //{
+        //    int_numberImageResult = 11;
+        //}
 
         for (i = 0; i < ary_TempData.length; i++) 
         {
